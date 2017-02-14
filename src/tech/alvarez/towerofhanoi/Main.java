@@ -1,11 +1,11 @@
-package com.danyalvarez.towerofhanoi;
+package tech.alvarez.towerofhanoi;
 
 import java.util.Stack;
 
 public class Main {
 
     public static void main(String args[]) {
-        new VentanaPrincipal();
+        new MainFrame();
 //        algoritmoHanoi(6, 1, 2, 3);
 //        System.out.println("");
 //        algoritmoHanoi(6);

@@ -1,4 +1,4 @@
-package com.danyalvarez.towerofhanoi;
+package tech.alvarez.towerofhanoi;
 
 /**
  * Clase Movimiento

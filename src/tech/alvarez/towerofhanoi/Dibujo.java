@@ -1,4 +1,4 @@
-package com.danyalvarez.towerofhanoi;
+package tech.alvarez.towerofhanoi;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -32,9 +32,9 @@ public class Dibujo extends JPanel implements ActionListener {
     private static final int VELOCIDAD = 1;
     private static final int LIMITE_FICHAS = 8;
     private static final int LIMITE_TORRES = 3;
-    private VentanaPrincipal nucleo;
+    private MainFrame nucleo;
 
-    public Dibujo(int nroFichas, VentanaPrincipal nucleo) {
+    public Dibujo(int nroFichas, MainFrame nucleo) {
         this.nroFichas = nroFichas;
         this.nucleo = nucleo;
         configurarPanel();
@@ -51,7 +51,7 @@ public class Dibujo extends JPanel implements ActionListener {
     private void inicializarComponentes() {
         fichas = new Image[LIMITE_FICHAS + 1];
         for (int i = 1; i <= LIMITE_FICHAS; i++) {
-            ImageIcon ii = new ImageIcon(this.getClass().getResource("/com/danyalvarez/towerofhanoi/images/" + i + ".png"));
+            ImageIcon ii = new ImageIcon(this.getClass().getResource("/tech/alvarez/towerofhanoi/images/" + i + ".png"));
             fichas[i] = ii.getImage();
         }
     }

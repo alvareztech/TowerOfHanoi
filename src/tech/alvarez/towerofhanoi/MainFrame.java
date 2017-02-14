@@ -1,4 +1,4 @@
-package com.danyalvarez.towerofhanoi;
+package tech.alvarez.towerofhanoi;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -15,10 +15,10 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 /**
- * Clase VentanaPrincipal
+ * Clase MainFrame
  * @author Daniel Alvarez
  */
-public class VentanaPrincipal extends JFrame implements ActionListener, ChangeListener {
+public class MainFrame extends JFrame implements ActionListener, ChangeListener {
 
     private JLabel labelNroDiscos;
     private JLabel labelInformacion;
@@ -26,7 +26,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener, ChangeLi
     private JButton botonIniciar;
     private Dibujo dibujo;
 
-    public VentanaPrincipal() {
+    public MainFrame() {
         super("Tower of Hanoi | alvarez.tech");
         configurarVentana();
         inicializarComponentes();
