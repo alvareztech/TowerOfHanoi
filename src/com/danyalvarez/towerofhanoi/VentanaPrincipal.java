@@ -27,7 +27,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener, ChangeLi
     private Dibujo dibujo;
 
     public VentanaPrincipal() {
-        super("Tower of Hanoi | Daniel Alvarez | www.danyalvarez.com");
+        super("Tower of Hanoi | alvarez.tech");
         configurarVentana();
         inicializarComponentes();
         this.setVisible(true);
@@ -46,18 +46,18 @@ public class VentanaPrincipal extends JFrame implements ActionListener, ChangeLi
 
         JPanel panelInferior = new JPanel();
 
-        labelNroDiscos = new JLabel("Numero De Fichas");
+        labelNroDiscos = new JLabel("Number of discs");
         panelInferior.add(labelNroDiscos);
 
         spinnerNroDiscos = new JSpinner(new SpinnerNumberModel(8, 1, 8, 1));
         spinnerNroDiscos.addChangeListener(this);
         panelInferior.add(spinnerNroDiscos);
 
-        botonIniciar = new JButton("Iniciar");
+        botonIniciar = new JButton("Start");
         botonIniciar.addActionListener(this);
         panelInferior.add(botonIniciar);
 
-        labelInformacion = new JLabel("RESOLUCIÓN COMPLETADA");
+        labelInformacion = new JLabel("RESOLUTION COMPLETED!");
         labelInformacion.setForeground(Color.red);
         labelInformacion.setVisible(false);
         panelInferior.add(labelInformacion);
@@ -70,26 +70,26 @@ public class VentanaPrincipal extends JFrame implements ActionListener, ChangeLi
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (botonIniciar.getText().equals("Pausar")) {
+        if (botonIniciar.getText().equals("Pause")) {
             dibujo.pausarAnimacion();
-            botonIniciar.setText("Continuar");
+            botonIniciar.setText("Continue");
         } else {
-            if (botonIniciar.getText().equals("Iniciar De Nuevo")) {
+            if (botonIniciar.getText().equals("Start again")) {
                 dibujo = new Dibujo(Integer.parseInt(spinnerNroDiscos.getValue().toString()), this);
                 add(dibujo, BorderLayout.CENTER);
-                botonIniciar.setText("Iniciar");
+                botonIniciar.setText("Start");
                 labelInformacion.setVisible(false);
                 this.setVisible(true);
             } else {
                 dibujo.iniciarAnimacion();
-                botonIniciar.setText("Pausar");
+                botonIniciar.setText("Pause");
             }
         }
     }
 
     public void stateChanged(ChangeEvent e) {
         dibujo.pausarAnimacion();
-        botonIniciar.setText("Iniciar");
+        botonIniciar.setText("Start");
         labelInformacion.setVisible(false);
         dibujo = new Dibujo(Integer.parseInt(spinnerNroDiscos.getValue().toString()), this);
         add(dibujo, BorderLayout.CENTER);
@@ -97,7 +97,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener, ChangeLi
     }
 
     public void resolucionCompletada() {
-        botonIniciar.setText("Iniciar De Nuevo");
+        botonIniciar.setText("Start again");
         labelInformacion.setVisible(true);
     }
 }
